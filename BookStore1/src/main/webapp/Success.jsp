@@ -39,10 +39,15 @@
 	        justify-content: center;
 	        align-items: center;
 	        height: 100vh;
+	        background-color: yellow;
 	    }
 	    .content {
 	        text-align: center;
 	        z-index: -1;
+	        background-color: rgba(255, 252, 127, 0.9); /* Slightly transparent white background */
+            padding: 20px;
+            border-radius: 10px;
+            
 	    }
 
 	    .borderless {
@@ -54,10 +59,22 @@
 	        border-radius: 10px; /* Example border radius */
 	    }
 	    body {
+	    	background-color: yellow;
             background-image: url('effect.gif');
             background-position: center;
             background-size: cover;
         }
+        body::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0); /* Semi-transparent overlay */
+        z-index: -1;
+    	}
+        
          p{
 	    	color:black;
 	    }
