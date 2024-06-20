@@ -15,6 +15,16 @@
                  url('CoolveticaRg-Regular.woff') format('woff');
             font-weight: bold;
         }
+        .header-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        .header-container img {
+            height: 60px; /* Adjust the height of the image as needed */
+            margin-right: 10px; /* Space between image and text */
+        }
         h1 {
             font-size: 30px;
             font-family: Coolvetica;
@@ -44,15 +54,18 @@
 	    .content {
 	        text-align: center;
 	        z-index: -1;
-	        background-color: rgba(255, 252, 127, 0.9); /* Slightly transparent white background */
+	        background-color: rgba(255, 255, 0, 0.9); /* Slightly transparent yellow background */
             padding: 20px;
             border-radius: 10px;
-            
+            border: 2px solid black; /* Add border with blue color */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Adjust shadow as needed */
 	    }
 
 	    .borderless {
-	        border: none;
-	        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Adjust shadow as needed */
+	        border: 2px solid blue; /* Add border with red color */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Adjust shadow as needed */
+            padding: 15px;
+            border-radius: 10px;
 	       
 	    }
 	    .rounded {
@@ -83,9 +96,12 @@
 <body>
 <div class="container p-5 bg-blue">
  	<div class="content p-5">
-		<H1>Book is successfully keyed in</H1>
+		<div class="header-container">
+            <img src="logo.png" alt="Bookstore logo"> <!-- Adjust the image source and path as needed -->
+            <h1>Book is successfully keyed in</h1>
+        </div>
 		<div class="mt-4 p-5 borderless rounded ">
-			<p><b>Id: </b><jsp:getProperty name="bean" property="id"/></p>
+			<p><b>ID: </b><jsp:getProperty name="bean" property="id"/></p>
 			<p><b>Title: </b><jsp:getProperty name="bean" property="title"/></p>
 			<p><b>Author: </b><jsp:getProperty name="bean" property="author"/></p>
 			<p><b>Price: </b><%= ((Book)request.getAttribute("bean")).getPrice() %></p>
